@@ -1,6 +1,7 @@
 window.cipher = {
   encode: (num, str) => {
-    num %= 26;
+    numForLetters = num %= 26;
+    numForOthers = num %= 9;
     let asciiCode = 0;
     let newStr = "";
 
@@ -13,7 +14,7 @@ window.cipher = {
       }  
 
       if (asciiCode>= 65 && asciiCode<=90) {
-        asciiCode += num;
+        asciiCode += numForLetters;
 
         if(asciiCode>90){
             asciiCode -= 26;
@@ -22,10 +23,28 @@ window.cipher = {
         toText();
         
       } else if (asciiCode>=97 && asciiCode<=122){
-        asciiCode += num;
+        asciiCode += numForLetters;
 
         if(asciiCode>122){
             asciiCode -= 26;
+        }
+
+        toText();
+
+      } else if (asciiCode>=33 && asciiCode<=64){
+        asciiCode += numForOthers;
+
+        if(asciiCode>64){
+            asciiCode -= 32;
+        }
+
+        toText();
+
+      } else if (asciiCode>=123 && asciiCode<=254){
+        asciiCode += numForOthers;
+
+        if(asciiCode>254){
+            asciiCode -= 132;
         }
 
         toText();
@@ -45,8 +64,8 @@ window.cipher = {
   },
 
 
-  decode: (num, str) => {
-    num %= 26;
+  decode: (numForLetters, str) => {
+    numForLetters %= 26;
     let asciiCode = 0;
     let newStr = "";
 
@@ -59,7 +78,7 @@ window.cipher = {
       }  
 
       if (asciiCode>= 65 && asciiCode<=90) {
-        asciiCode -= num;
+        asciiCode -= numForLetters;
       
         if(asciiCode<65){
             asciiCode += 26;
@@ -68,12 +87,30 @@ window.cipher = {
         toText();
         
       } else if (asciiCode>=97 && asciiCode<=122){
-        asciiCode -= num;
+        asciiCode -= numForLetters;
       
         if(asciiCode<97){
             asciiCode += 26;
         }
       
+        toText();
+
+      } else if (asciiCode>=33 && asciiCode<=64){
+        asciiCode -= numForOthers;
+
+        if(asciiCode<33){
+            asciiCode += 32;
+        }
+
+        toText();
+
+      } else if (asciiCode>=123 && asciiCode<=254){
+        asciiCode -= numForOthers;
+
+        if(asciiCode<123){
+            asciiCode += 132;
+        }
+
         toText();
        
       } else {
