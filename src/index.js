@@ -1,3 +1,4 @@
+//CODING
 document.getElementById("encoding").addEventListener("click", () => {
   //here goes the DOM that plays with the views.
   
@@ -10,6 +11,8 @@ document.getElementById("encoding").addEventListener("click", () => {
   console.log(encodedText)
 });
 
+
+//DECODING
 document.getElementById("decoding").addEventListener("click", () => {
   //here goes the DOM that plays with the views.
   
