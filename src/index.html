@@ -3,16 +3,45 @@
   <head>
     <meta charset="utf-8">
     <title>Caesar Cipher</title>
+    <link href="https://fonts.googleapis.com/css?family=Cedarville+CursiveDamion" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <header>
+      <figure class="inlineblock">
+        <img src="/imgs/marijuana.png" alt="cannabis logo" width="90px">
+      </figure>
+      <div class="inlineblock">
+       <h1>Cannábilis</h1>
+       <p id="slogan">canalicemos hacia nuestras habilidades.</p>
+    </div>
+    <!-- <select class="inlineblock">
+      <option>Preguntas frecuentes</option>
+      <option></option>
+      <option></option>
+      <option></option> 
+    </select> -->
+    </header>
+
+    <nav class="steps">
+      <ul>
+        <button> 1 </button>
+        <button> 2 </button>
+        <button> 3 </button>
+        <button> 4 </button>
+        <button> 5 </button>
+      </ul>
+
+    </nav>
+    
     <div>
       <textarea id="written-text" cols="30" rows="5"></textarea>
       <input type="number" id="offset" min="0" value="0">
       <button id="encoding">CIFRAR</button>
       <button id="decoding">DESCIFRAR</button>
     </div>
+    
     <script src="cipher.js"></script>
-    <script src="index.js"></script>
-  </body>
+    <script src="index.js"></script>  </body>
 </html>
+ 

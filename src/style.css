@@ -1,1 +1,48 @@
-/* Acá va tu código */
+header{
+    position: sticky;
+    background-color: azure;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.inlineblock{
+    display: inline-block;
+}
+
+h1{
+    font-family: 'Damion', cursive;
+    font-size: 45px;
+    margin-bottom: 0px;
+}
+
+#slogan{
+    font-family: 'Cedarville Cursive', cursive;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+select{
+    color: black;
+    text-align: center;
+    padding: 4px;
+    font-size: 13px; 
+    border-top: 0px;
+}
+
+.steps{
+    width: 100%;
+    text-align: center;
+}
+.steps button{
+    background-color: rgb(255, 255, 255);
+    border: none;
+    color: rgb(0, 0, 0);
+    margin: 10px, 50px;
+    font-size: 20px; 
+    cursor: pointer;
+    width: 15%;
+}
+
+.steps button:hover{
+    border-color: aqua;
+}
