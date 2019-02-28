@@ -6,30 +6,8 @@ const cleanSection = () => {
 let encodedText = "";
 let clave = 0;
 
-document.getElementById("first").addEventListener("click", () => {
-  const mainIntro = document.createElement("MAIN");
-
-  const firstTemplate = `
-    <figure>
-      <img src="/imgs/little-maria.jpg" alt="baby marijuana">
-    </figure>
-    <article>
-      <h1>No es tan mala como la creen.</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quisquam placeat error saepe quod cumque voluptates cum excepturi ad praesentium recusandae, quibusdam reiciendis, est sint autem nulla fugit quasi. Corporis.</p>
-      <p>Masdas consectetur adipisicing elit. Fuga perspiciatis autem facere aliquid distinctio praesentium ad dolorum facilis! Officia alias fugiat voluptatibus mollitia incidunt doloribus placeat vitae tempora reiciendis laudantium!</p>
-      <h3>Something to explain lor sit amet</h3>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium, doloribus veniam, deleniti, sint vitae libero minima quo voluptatem repudiandae nesciunt incidunt quaerat cum exercitationem ipsam accusantium. Similique</p>
-      <p>Wnsectetur adipisicing elit. Magni, iste. Omnis repellendus ad aliquam expedita blanditiis sunt eos dolorum maxime. Alias nobis, possimus provident dignissimos aspernatur reiciendis iste voluptatem excepturi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis animi rem tempore veritatis sunt vel illo in! Minus repudiandae maxime amet modi quidem rerum, accusamus facilis, ullam nam temporibus asperiores?</p>
-    </article>  
-  `
-  mainIntro.innerHTML = firstTemplate;
-  cleanSection();
-  section.appendChild(mainIntro);
-});
-
-document.getElementById("second").addEventListener("click", () => {
+const goTo2 = () => {
   const divCoding = document.createElement("DIV");
-
   const secondTemplate = `
   <article>
     <h2>Haz tu pedido</h2>
@@ -46,22 +24,20 @@ document.getElementById("second").addEventListener("click", () => {
   cleanSection();
   section.appendChild(divCoding);
 
-
   //CODING
   document.getElementById("encoding").addEventListener("click", () => {
-    
     const writtenText = document.getElementById("written-text").value;
     let offset = parseInt(document.getElementById("offset").value);
     
     encodedText = cipher.encode(offset, writtenText);
     clave = offset;
-
-   console.log(clave)
-   console.log(encodedText)
   });
-});
 
-document.getElementById("third").addEventListener("click", () => {
+  document.getElementById("encoding").addEventListener("click", goTo3);
+  
+};
+
+const goTo3 = () => {
   const divSending = document.createElement("DIV");
   const thirdTemplate = `
   <article>
@@ -72,12 +48,50 @@ document.getElementById("third").addEventListener("click", () => {
   </article>
   <div>
    <button>ENVIAR</button>
+   <button id="go-back">EDITAR MENSAJE</button>
+
   </div>
   `
  divSending.innerHTML = thirdTemplate;
  cleanSection();
  section.appendChild(divSending);
+
+
+ document.getElementById("go-back").addEventListener("click", goTo2)
+};
+
+const goTo4 = () => {
+};
+
+document.getElementById("first").addEventListener("click", () => {
+  const mainIntro = document.createElement("MAIN");
+
+  const firstTemplate = `
+    <figure>
+      <img src="/imgs/little-maria.jpg" alt="baby marijuana">
+    </figure>
+    <article>
+      <h1>No es tan mala como la creen.</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quisquam placeat error saepe quod cumque voluptates cum excepturi ad praesentium recusandae, quibusdam reiciendis, est sint autem nulla fugit quasi. Corporis.</p>
+      <p>Masdas consectetur adipisicing elit. Fuga perspiciatis autem facere aliquid distinctio praesentium ad dolorum facilis! Officia alias fugiat voluptatibus mollitia incidunt doloribus placeat vitae tempora reiciendis laudantium!</p>
+      <h3>Something to explain lor sit amet</h3>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium, doloribus veniam, deleniti, sint vitae libero minima quo voluptatem repudiandae nesciunt incidunt quaerat cum exercitationem ipsam accusantium. Similique</p>
+      <p>Wnsectetur adipisicing elit. Magni, iste. Omnis repellendus ad aliquam expedita blanditiis sunt eos dolorum maxime. Alias nobis, possimus provident dignissimos aspernatur reiciendis iste voluptatem excepturi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis animi rem tempore veritatis sunt vel illo in! Minus repudiandae maxime amet modi quidem rerum, accusamus facilis, ullam nam temporibus asperiores?</p>
+    </article>
+    <div>
+      <button id="go-to-2">SIGUIENTE</button>
+    </div>
+  `
+  mainIntro.innerHTML = firstTemplate;
+  cleanSection();
+  section.appendChild(mainIntro);
+
+  document.getElementById("go-to-2").addEventListener("click", goTo2);
 });
+
+document.getElementById("second").addEventListener("click", goTo2);
+
+document.getElementById("third").addEventListener("click", goTo3);
 
 
 //DECODING
@@ -89,6 +103,4 @@ document.getElementById("third").addEventListener("click", () => {
 //   let decodedText = "";
 
 //   decodedText = cipher.decode(offset, writtenText);
-
-//   console.log(decodedText)
 // });
