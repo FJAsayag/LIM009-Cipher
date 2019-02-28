@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Caesar Cipher</title>
-    <link href="https://fonts.googleapis.com/css?family=Cedarville+CursiveDamion" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive|Damion" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -23,25 +23,27 @@
     </select> -->
     </header>
 
-    <nav class="steps">
+    <nav>
       <ul>
-        <button> 1 </button>
-        <button> 2 </button>
-        <button> 3 </button>
-        <button> 4 </button>
-        <button> 5 </button>
+        <button id="first"> 1 </button>
+        <button id="second"> 2 </button>
+        <button id="third"> 3 </button>
+        <button id="fourth"> 4 </button>
+        <button id="fifth"> 5 </button>
       </ul>
-
     </nav>
+
+    <section id="steps-screens"></section>
     
-    <div>
+    <!-- <div>
       <textarea id="written-text" cols="30" rows="5"></textarea>
-      <input type="number" id="offset" min="0" value="0">
+      <input type="number" id="offset" value="0">
       <button id="encoding">CIFRAR</button>
       <button id="decoding">DESCIFRAR</button>
-    </div>
+    </div> -->
     
     <script src="cipher.js"></script>
     <script src="index.js"></script>  </body>
 </html>
- 
+
+

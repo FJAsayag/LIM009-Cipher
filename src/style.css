@@ -29,11 +29,11 @@ select{
     border-top: 0px;
 }
 
-.steps{
+nav{
     width: 100%;
     text-align: center;
 }
-.steps button{
+nav button{
     background-color: rgb(255, 255, 255);
     border: none;
     color: rgb(0, 0, 0);
@@ -43,6 +43,6 @@ select{
     width: 15%;
 }
 
-.steps button:hover{
+nav button:hover{
     border-color: aqua;
 }
