@@ -5,6 +5,7 @@ const cleanSection = () => {
  };
 let encodedText = "";
 let clave = 0;
+let decodedText = "";
 
 const goTo2 = () => {
   const divCoding = document.createElement("DIV");
@@ -14,7 +15,7 @@ const goTo2 = () => {
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit consequatur, id nihil impedit tenetur perspiciatis unde placeat aliquid quam fugiat animi nemo iste expedita eos qui. Porro!</p>
   </article>
   <div>
-    <p>Escríbenos</p>
+    <h4>Escríbenos</h4>
     <textarea id="written-text" cols="30" rows="5"></textarea>
     <input type="number" id="offset" value="0">
     <button id="encoding">CIFRAR</button>
@@ -47,21 +48,77 @@ const goTo3 = () => {
    <p>${clave}</p>
   </article>
   <div>
-   <button>ENVIAR</button>
    <button id="go-back">EDITAR MENSAJE</button>
-
+   <button id="go-to-fourth">ENVIAR</button>
   </div>
   `
  divSending.innerHTML = thirdTemplate;
  cleanSection();
  section.appendChild(divSending);
 
-
- document.getElementById("go-back").addEventListener("click", goTo2)
+ document.getElementById("go-to-fourth").addEventListener("click", goTo4);
+ document.getElementById("go-back").addEventListener("click", goTo2);
 };
 
 const goTo4 = () => {
+  const divDecoding = document.createElement("DIV");
+  const fourthTemplate = `
+  <article>
+    <h2>Recibimos tu pedido y ahora estamos en contacto</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit consequatur, id nihil impedit tenetur perspiciatis unde placeat aliquid quam fugiat animi nemo iste expedita eos qui. Porro!</p>
+  </article>
+  <div>
+    <h4>Pega el mensaje que te enviamos</h4>
+    <textarea id="written-text" cols="30" rows="5"></textarea>
+    <input type="number" id="offset" value="0">
+    <button id="decoding">DESCIFRAR</button>
+  </div>
+  `
+
+  divDecoding.innerHTML = fourthTemplate;
+  cleanSection();
+  section.appendChild(divDecoding);
+
+  // DECODING
+ document.getElementById("decoding").addEventListener("click", () => {  
+   const writtenText = document.getElementById("written-text").value;
+   let offset = parseInt(document.getElementById("offset").value);
+
+   decodedText = cipher.decode(offset, writtenText);
+   clave = offset;
+ });
+
+ document.getElementById("decoding").addEventListener("click", goTo5);
 };
+
+const goTo5 = () => {
+  const divSharing = document.createElement("DIV");
+  const fifthTemplate = `
+  <article>
+  <h3>Ejem... Disculpa, en verdad quisimos decirte:</h3>
+  <p>${decodedText}</p>
+  <h5>Con una clave de:</h5>
+  <p>${clave}</p>
+ </article>
+ <div>
+  <button id="againCoding">CIFRAR NUEVO MENSAJE</button>
+  <button id="againDecoding">DESCIFRAR OTRO MENSAJE</button>
+ </div>
+ <div>
+  <p>¡Comparte nuestra iniciativa!<p>
+  <input type="text" value="">
+  <button>LINK!</button>
+ </div>
+  `
+  
+  divSharing.innerHTML = fifthTemplate;
+  cleanSection();
+  section.appendChild(divSharing);
+
+  document.getElementById("againCoding").addEventListener("click", goTo2);
+  document.getElementById("againDecoding").addEventListener("click", goTo4);
+}
+
 
 document.getElementById("first").addEventListener("click", () => {
   const mainIntro = document.createElement("MAIN");
@@ -93,14 +150,6 @@ document.getElementById("second").addEventListener("click", goTo2);
 
 document.getElementById("third").addEventListener("click", goTo3);
 
+document.getElementById("fourth").addEventListener("click", goTo4)
 
-//DECODING
-// document.getElementById("decoding").addEventListener("click", () => {
-//   //here goes the DOM that plays with the views.
-  
-//   const writtenText = document.getElementById("written-text").value;
-//   let offset = parseInt(document.getElementById("offset").value);
-//   let decodedText = "";
-
-//   decodedText = cipher.decode(offset, writtenText);
-// });
+document.getElementById("fifth").addEventListener("click", goTo5);
