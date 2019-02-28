@@ -1,4 +1,10 @@
 const section = document.getElementById("steps-screens");
+const cleanSection = () => {
+  section.style.display = "block";
+  section.innerHTML = "";
+ };
+let encodedText = "";
+let clave = 0;
 
 document.getElementById("first").addEventListener("click", () => {
   const mainIntro = document.createElement("MAIN");
@@ -17,8 +23,7 @@ document.getElementById("first").addEventListener("click", () => {
     </article>  
   `
   mainIntro.innerHTML = firstTemplate;
-  section.style.display = "block";
-  section.innerHTML = "";  
+  cleanSection();
   section.appendChild(mainIntro);
 });
 
@@ -38,24 +43,42 @@ document.getElementById("second").addEventListener("click", () => {
   </div>
   `
   divCoding.innerHTML = secondTemplate;
-  section.style.display = "block";
-  section.innerHTML = "";
+  cleanSection();
   section.appendChild(divCoding);
 
 
   //CODING
   document.getElementById("encoding").addEventListener("click", () => {
-    //here goes the DOM that plays with the views.
     
     const writtenText = document.getElementById("written-text").value;
     let offset = parseInt(document.getElementById("offset").value);
-    let encodedText = "";
-  
+    
     encodedText = cipher.encode(offset, writtenText);
-  
-    console.log(encodedText)
+    clave = offset;
+
+   console.log(clave)
+   console.log(encodedText)
   });
 });
+
+document.getElementById("third").addEventListener("click", () => {
+  const divSending = document.createElement("DIV");
+  const thirdTemplate = `
+  <article>
+   <h3>Tu mensaje codificado: </h3>
+   <p>${encodedText}</p>
+   <h5>No olvides tu clave: </h5>
+   <p>${clave}</p>
+  </article>
+  <div>
+   <button>ENVIAR</button>
+  </div>
+  `
+ divSending.innerHTML = thirdTemplate;
+ cleanSection();
+ section.appendChild(divSending);
+});
+
 
 //DECODING
 // document.getElementById("decoding").addEventListener("click", () => {
