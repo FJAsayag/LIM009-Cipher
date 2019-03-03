@@ -1,6 +1,5 @@
 window.cipher = {
   encode: (num, str) => {
-    const numForLetters = num %= 26;
     let asciiCode = 0;
     let newStr = "";
 
@@ -13,6 +12,7 @@ window.cipher = {
       }  
 
       if (asciiCode>= 65 && asciiCode<=90) {
+        const numForLetters = num %= 26;
         asciiCode += numForLetters;
 
         if(asciiCode>90){
@@ -22,6 +22,7 @@ window.cipher = {
         toText();
         
       } else if (asciiCode>=97 && asciiCode<=122){
+        const numForLetters = num %= 26;
         asciiCode += numForLetters;
 
         if(asciiCode>122){
@@ -31,8 +32,11 @@ window.cipher = {
         toText();
 
       } else if (asciiCode>=33 && asciiCode<=47){
+        console.log(num)
         const numForOthers =  num %= 15;
+        console.log(numForOthers)
         asciiCode += numForOthers;
+        console.log(asciiCode)
 
         if(asciiCode>47){
             asciiCode -= 15;
@@ -85,7 +89,6 @@ window.cipher = {
 
 
   decode: (num, str) => {
-    const numForLetters = num %= 26;
     let asciiCode = 0;
     let newStr = "";
 
@@ -98,6 +101,7 @@ window.cipher = {
       }  
 
       if (asciiCode>= 65 && asciiCode<=90) {
+        const numForLetters = num %= 26;
         asciiCode -= numForLetters;
       
         if(asciiCode<65){
@@ -107,6 +111,7 @@ window.cipher = {
         toText();
         
       } else if (asciiCode>=97 && asciiCode<=122){
+        const numForLetters = num %= 26;
         asciiCode -= numForLetters;
       
         if(asciiCode<97){
