@@ -32,11 +32,8 @@ window.cipher = {
         toText();
 
       } else if (asciiCode>=33 && asciiCode<=47){
-        console.log(num)
         const numForOthers =  num %= 15;
-        console.log(numForOthers)
         asciiCode += numForOthers;
-        console.log(asciiCode)
 
         if(asciiCode>47){
             asciiCode -= 15;
