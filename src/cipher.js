@@ -61,6 +61,16 @@ window.cipher = {
 
         toText();
 
+      } else if (asciiCode>=91 && asciiCode<=96){
+        const numForOthers =  num %= 6;
+        asciiCode += numForOthers;
+
+        if(asciiCode>96){
+            asciiCode -= 6;
+        }
+
+        toText();
+
       } else if (asciiCode>=123 && asciiCode<=254){
         const numForOthers = num %= 132;
         asciiCode += numForOthers;
@@ -143,6 +153,16 @@ window.cipher = {
 
         if(asciiCode<58){
             asciiCode += 7;
+        }
+
+        toText();
+
+      } else if (asciiCode>=91 && asciiCode<=96){
+        const numForOthers =  num %= 6;
+        asciiCode -= numForOthers;
+
+        if(asciiCode>91){
+            asciiCode += 6;
         }
 
         toText();
