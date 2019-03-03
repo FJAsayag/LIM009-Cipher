@@ -1,7 +1,6 @@
 window.cipher = {
   encode: (num, str) => {
-    numForLetters = num %= 26;
-    numForOthers = num %= 9;
+    const numForLetters = num %= 26;
     let asciiCode = 0;
     let newStr = "";
 
@@ -31,16 +30,38 @@ window.cipher = {
 
         toText();
 
-      } else if (asciiCode>=33 && asciiCode<=64){
+      } else if (asciiCode>=33 && asciiCode<=47){
+        const numForOthers =  num %= 15;
+        asciiCode += numForOthers;
+
+        if(asciiCode>47){
+            asciiCode -= 15;
+        }
+
+        toText();
+
+      } else if (asciiCode>=48 && asciiCode<=57){
+        const numForOthers = num %= 10;
+        asciiCode += numForOthers;
+
+        if(asciiCode>57){
+            asciiCode -= 10;
+        }
+
+        toText();
+
+      } else if (asciiCode>=58 && asciiCode<=64){
+        const numForOthers =  num %= 7;
         asciiCode += numForOthers;
 
         if(asciiCode>64){
-            asciiCode -= 32;
+            asciiCode -= 7;
         }
 
         toText();
 
       } else if (asciiCode>=123 && asciiCode<=254){
+        const numForOthers = num %= 132;
         asciiCode += numForOthers;
 
         if(asciiCode>254){
@@ -59,13 +80,12 @@ window.cipher = {
     newStr += asciiCode;
     }
 
-    console.log(newStr);
    return newStr;
   },
 
 
-  decode: (numForLetters, str) => {
-    numForLetters %= 26;
+  decode: (num, str) => {
+    const numForLetters = num %= 26;
     let asciiCode = 0;
     let newStr = "";
 
@@ -95,16 +115,38 @@ window.cipher = {
       
         toText();
 
-      } else if (asciiCode>=33 && asciiCode<=64){
+      } else if (asciiCode>=33 && asciiCode<=47){
+        const numForOthers =  num %= 15;
         asciiCode -= numForOthers;
 
         if(asciiCode<33){
-            asciiCode += 32;
+            asciiCode += 15;
+        }
+
+        toText();
+
+      } else if (asciiCode>=48 && asciiCode<=57){
+        const numForOthers = num %= 10;
+        asciiCode -= numForOthers;
+
+        if(asciiCode<48){
+            asciiCode += 10;
+        }
+
+        toText();
+
+      } else if (asciiCode>=58 && asciiCode<=64){
+        const numForOthers =  num %= 7;
+        asciiCode -= numForOthers;
+
+        if(asciiCode<58){
+            asciiCode += 7;
         }
 
         toText();
 
       } else if (asciiCode>=123 && asciiCode<=254){
+        const numForOthers = num %= 132;
         asciiCode -= numForOthers;
 
         if(asciiCode<123){
@@ -118,12 +160,10 @@ window.cipher = {
       
         toText();
       }    
-     
-      
+
     newStr += asciiCode;
     }
 
-    console.log(newStr);
    return newStr;
   }
 }
