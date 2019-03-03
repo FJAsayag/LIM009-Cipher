@@ -161,7 +161,7 @@ window.cipher = {
         const numForOthers =  num %= 6;
         asciiCode -= numForOthers;
 
-        if(asciiCode>91){
+        if(asciiCode<91){
             asciiCode += 6;
         }
 
