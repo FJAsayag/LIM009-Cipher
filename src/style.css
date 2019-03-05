@@ -3,30 +3,29 @@ header{
     background-color: azure;
     box-sizing: border-box;
     width: 100%;
+    display: flex;
 }
 
-.inlineblock{
-    display: inline-block;
+header img{
+    justify-content: flex-start;
 }
 
-h1{
+header div{
+    display: flex;
+    flex-direction: column;
+}
+
+#cannabilis{
     font-family: 'Damion', cursive;
     font-size: 45px;
     margin-bottom: 0px;
+    margin-top: 10px;
 }
 
 #slogan{
     font-family: 'Cedarville Cursive', cursive;
     font-weight: bold;
-    margin-top: 5px;
-}
-
-select{
-    color: black;
-    text-align: center;
-    padding: 4px;
-    font-size: 13px; 
-    border-top: 0px;
+    margin-top: 0px;
 }
 
 nav{
@@ -41,8 +40,55 @@ nav button{
     font-size: 20px; 
     cursor: pointer;
     width: 15%;
+    font-family: 'Sigmar One', cursive;
 }
 
 nav button:hover{
-    border-color: aqua;
+    color: rgb(38, 145, 47);
+}
+
+#imgAndh1{
+    display: flex;
+    align-items: center;
+}
+
+#imgAndh1 figure{
+    width: 75%;
+}
+
+#baby-weed{
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.not-so-bad{
+    width: 25%;
+    height: 100%;
+    font-family: 'Damion', cursive;
+    font-size: 3.3rem;
+    margin-right: 5%;
+}
+
+#firstArt{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    margin: 0 5%;
+    margin-bottom: 10%;
+    justify-content: center;
+}
+
+#go-to-2{
+    background-color: rgb(255, 255, 255);
+    border: solid;
+    border-width: 1.5px;;
+    font-size: 15px;
+    cursor: pointer;
+    width: 30%;
+    padding: 7px;
+    margin-left: 30%
+}
+
+#go-to-2:hover{
+    color: rgb(38, 145, 47);
 }

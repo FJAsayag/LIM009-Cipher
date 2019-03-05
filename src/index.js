@@ -122,22 +122,23 @@ const goTo5 = () => {
 
 document.getElementById("first").addEventListener("click", () => {
   const mainIntro = document.createElement("MAIN");
+  mainIntro.id = "one"
 
   const firstTemplate = `
-    <figure>
-      <img src="/imgs/little-maria.jpg" alt="baby marijuana">
-    </figure>
-    <article>
-      <h1>No es tan mala como la creen.</h1>
+    <div id="imgAndh1">
+     <figure>
+      <img id="baby-weed" src="/imgs/little-maria.jpg" alt="baby marijuana">
+     </figure>
+      <h1 class="not-so-bad">No es tan mala como la creen.</h1>
+    </div>
+    <article id="firstArt">
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quisquam placeat error saepe quod cumque voluptates cum excepturi ad praesentium recusandae, quibusdam reiciendis, est sint autem nulla fugit quasi. Corporis.</p>
       <p>Masdas consectetur adipisicing elit. Fuga perspiciatis autem facere aliquid distinctio praesentium ad dolorum facilis! Officia alias fugiat voluptatibus mollitia incidunt doloribus placeat vitae tempora reiciendis laudantium!</p>
       <h3>Something to explain lor sit amet</h3>
       <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium, doloribus veniam, deleniti, sint vitae libero minima quo voluptatem repudiandae nesciunt incidunt quaerat cum exercitationem ipsam accusantium. Similique</p>
       <p>Wnsectetur adipisicing elit. Magni, iste. Omnis repellendus ad aliquam expedita blanditiis sunt eos dolorum maxime. Alias nobis, possimus provident dignissimos aspernatur reiciendis iste voluptatem excepturi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis animi rem tempore veritatis sunt vel illo in! Minus repudiandae maxime amet modi quidem rerum, accusamus facilis, ullam nam temporibus asperiores?</p>
-    </article>
-    <div>
       <button id="go-to-2">SIGUIENTE</button>
-    </div>
+    </article>
   `
   mainIntro.innerHTML = firstTemplate;
   cleanSection();
