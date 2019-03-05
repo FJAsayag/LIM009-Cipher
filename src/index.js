@@ -12,15 +12,21 @@ const goTo2 = () => {
   const secondTemplate = `
   <article id="secondArt">
     <h2>Haz tu pedido</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit consequatur, id nihil impedit tenetur perspiciatis unde placeat aliquid quam fugiat animi nemo iste expedita eos qui. Porro!</p>
+    <p>Lorem ipsum dolor Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur ullam eius natus nemo, minus error vel quisquam cupiditate magni atque magnam! Sit officia rerum nesciunt sunt ipsa vel, quibusdam illum? sit amet consectetur adipisicing elit. Reprehenderit consequatur, id nihil impedit tenetur perspiciatis unde placeat aliquid quam fugiat animi nemo iste expedita eos qui. Porro!</p>
   </article>
   <div id="coder">
+   <div>
     <h4>Escríbenos</h4>
-    <textarea id="written-text" cols="30" rows="5"></textarea>
+    <textarea id="written-text" cols="70" rows="8"></textarea>
+   </div>
+   <div>
     <h5 id="indicator">Inserte su clave</h5>
     <input type="number" id="offset" value="0">
-    <button id="encoding">CIFRAR</button>
-  </div>
+   </div>
+   <div>
+   <button id="encoding">CIFRAR</button>
+   </div>
+   </div>
   `
   divCoding.innerHTML = secondTemplate;
   cleanSection();
@@ -64,15 +70,22 @@ const goTo3 = () => {
 const goTo4 = () => {
   const divDecoding = document.createElement("DIV");
   const fourthTemplate = `
-  <article>
+  <article id="fourthArt">
     <h2>Recibimos tu pedido y ahora estamos en contacto</h2>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit consequatur, id nihil impedit tenetur perspiciatis unde placeat aliquid quam fugiat animi nemo iste expedita eos qui. Porro!</p>
   </article>
-  <div>
+  <div id="decoder">
+   <div>
     <h4>Pega el mensaje que te enviamos</h4>
-    <textarea id="written-text" cols="30" rows="5"></textarea>
+    <textarea id="written-text" cols="70" rows="8"></textarea>
+    </div>
+    <div>
+    <h5 id="indicator">Inserte su clave</h5>
     <input type="number" id="offset" value="0">
+    </div>
+    <div>
     <button id="decoding">DESCIFRAR</button>
+    </div>
   </div>
   `
 
