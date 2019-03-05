@@ -43,7 +43,7 @@ nav button{
     font-family: 'Sigmar One', cursive;
 }
 
-nav button:hover{
+button:hover{
     color: rgb(38, 145, 47);
 }
 
@@ -78,17 +78,46 @@ nav button:hover{
     justify-content: center;
 }
 
-#go-to-2{
+#go-to-2, #encoding{
     background-color: rgb(255, 255, 255);
     border: solid;
-    border-width: 1.5px;;
+    border-width: 1.5px;
+    margin: 35px;
     font-size: 15px;
     cursor: pointer;
-    width: 30%;
+    width: 20%;
     padding: 7px;
-    margin-left: 30%
+    margin-left: 40%;
 }
 
 #go-to-2:hover{
     color: rgb(38, 145, 47);
+}
+
+#secondArt{
+    display: flex;
+    flex-direction: column;
+    margin: 0 10%;
+}
+
+#coder{
+    display: flex; 
+    flex-direction: column;
+    margin: 10%;
+}
+
+#written-text{
+    margin: 10px 0px;
+
+}
+
+#offset{
+    width: 10%;
+    margin: 10px;
+    margin-left: 80%;
+}
+
+#encoding{
+    width: 150px;
+    margin-left: 45%;
 }

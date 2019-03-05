@@ -10,13 +10,14 @@ let decodedText = "";
 const goTo2 = () => {
   const divCoding = document.createElement("DIV");
   const secondTemplate = `
-  <article>
+  <article id="secondArt">
     <h2>Haz tu pedido</h2>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit consequatur, id nihil impedit tenetur perspiciatis unde placeat aliquid quam fugiat animi nemo iste expedita eos qui. Porro!</p>
   </article>
-  <div>
+  <div id="coder">
     <h4>Escríbenos</h4>
     <textarea id="written-text" cols="30" rows="5"></textarea>
+    <h5 id="indicator">Inserte su clave</h5>
     <input type="number" id="offset" value="0">
     <button id="encoding">CIFRAR</button>
   </div>
