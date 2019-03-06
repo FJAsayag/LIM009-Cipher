@@ -141,7 +141,7 @@ document.getElementById("first").addEventListener("click", () => {
   const firstTemplate = `
     <div id="imgAndh1">
      <figure>
-      <img id="baby-weed" src="/imgs/little-maria.jpg" alt="baby marijuana">
+      <img id="baby-weed" src="./imgs/little-maria.jpg" alt="baby marijuana">
      </figure>
       <h1 class="not-so-bad">No es tan mala como la creen.</h1>
     </div>
