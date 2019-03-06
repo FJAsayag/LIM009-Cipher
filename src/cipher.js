@@ -7,9 +7,7 @@ window.cipher = {
       
       asciiCode = str.charCodeAt(i);
 
-      const toText = () => {
-        asciiCode = String.fromCharCode(asciiCode);
-      }  
+      window.utils.assciToText(asciiCode);
 
       if (asciiCode>= 65 && asciiCode<=90) {
         const numForLetters = num %= 26;

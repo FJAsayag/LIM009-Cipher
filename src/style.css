@@ -13,6 +13,7 @@ header img{
 header div{
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 #cannabilis{
@@ -30,17 +31,32 @@ header div{
 
 nav{
     width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#steps{
+    width: 100%;
     text-align: center;
 }
+
 nav button{
     background-color: rgb(255, 255, 255);
     border: none;
     color: rgb(0, 0, 0);
-    margin: 10px, 50px;
-    font-size: 20px; 
     cursor: pointer;
-    width: 15%;
     font-family: 'Sigmar One', cursive;
+    height: 30%;
+    width: 23%;
+}
+
+#steps button{
+    width: 15%;
+    margin: 10px, 50px;
+    font-size: 20px;
+    height: 100%;
 }
 
 button:hover{
