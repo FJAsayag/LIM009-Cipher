@@ -1,4 +1,11 @@
-const section = document.getElementById("steps-screens");
+const buyingSection = document.getElementById("buying");
+      buyingSection.style.display = "none";
+
+document.getElementById("to-buy").addEventListener("click", () => {
+  buyingSection.style.display = "block";
+});
+
+const section = document.getElementById("buying-screens");
 const cleanSection = () => {
   section.style.display = "block";
   section.innerHTML = "";
@@ -17,14 +24,14 @@ const goTo2 = () => {
   <div id="coder">
    <div>
     <h4>Escríbenos</h4>
-    <textarea id="written-text" cols="70" rows="8"></textarea>
+    <textarea id="written-text"></textarea>
    </div>
    <div>
     <h5 id="indicator">Inserte su clave</h5>
     <input type="number" id="offset" value="0">
    </div>
    <div>
-   <button id="encoding">CIFRAR</button>
+   <button id="encoding" class="styled-buttons">CIFRAR</button>
    </div>
    </div>
   `
@@ -47,16 +54,17 @@ const goTo2 = () => {
 
 const goTo3 = () => {
   const divSending = document.createElement("DIV");
+  divSending.id="three"
   const thirdTemplate = `
-  <article>
+  <article id="thirdArt"> 
    <h3>Tu mensaje codificado: </h3>
    <p>${encodedText}</p>
    <h5>No olvides tu clave: </h5>
    <p>${clave}</p>
   </article>
   <div>
-   <button id="go-back">EDITAR MENSAJE</button>
-   <button id="go-to-fourth">ENVIAR</button>
+   <button id="go-back" class="styled-buttons">EDITAR MENSAJE</button>
+   <button id="go-to-fourth" class="styled-buttons">ENVIAR</button>
   </div>
   `
  divSending.innerHTML = thirdTemplate;
@@ -77,14 +85,14 @@ const goTo4 = () => {
   <div id="decoder">
    <div>
     <h4>Pega el mensaje que te enviamos</h4>
-    <textarea id="written-text" cols="70" rows="8"></textarea>
+    <textarea id="written-text"></textarea>
     </div>
     <div>
     <h5 id="indicator">Inserte su clave</h5>
     <input type="number" id="offset" value="0">
     </div>
     <div>
-    <button id="decoding">DESCIFRAR</button>
+    <button id="decoding" class="styled-buttons">DESCIFRAR</button>
     </div>
   </div>
   `
@@ -108,19 +116,21 @@ const goTo4 = () => {
 const goTo5 = () => {
   const divSharing = document.createElement("DIV");
   const fifthTemplate = `
+ <div id="showing-message">
   <article>
   <h3>Ejem... Disculpa, en verdad quisimos decirte:</h3>
   <p>${decodedText}</p>
   <h5>Con una clave de:</h5>
   <p>${clave}</p>
- </article>
- <div>
-  <button id="againCoding">CIFRAR NUEVO MENSAJE</button>
-  <button id="againDecoding">DESCIFRAR OTRO MENSAJE</button>
+  </article>
+  <div id="last-buttons">
+  <button id="againCoding" class="styled-buttons">CIFRAR NUEVO MENSAJE</button>
+  <button id="againDecoding" class="styled-buttons">DESCIFRAR OTRO MENSAJE</button>
+  </div>
  </div>
- <div>
-  <p>¡Comparte nuestra iniciativa!<p>
-  <input type="text" value="">
+ <div id="sharing">
+  <p id="share">¡Comparte nuestra iniciativa!<p>
+  <input type="text" value="https://fjasayag.github.io/LIM009-Cipher/src/index.html">
   <button>LINK!</button>
  </div>
   `
@@ -151,7 +161,7 @@ document.getElementById("first").addEventListener("click", () => {
       <h3>Something to explain lor sit amet</h3>
       <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium, doloribus veniam, deleniti, sint vitae libero minima quo voluptatem repudiandae nesciunt incidunt quaerat cum exercitationem ipsam accusantium. Similique</p>
       <p>Wnsectetur adipisicing elit. Magni, iste. Omnis repellendus ad aliquam expedita blanditiis sunt eos dolorum maxime. Alias nobis, possimus provident dignissimos aspernatur reiciendis iste voluptatem excepturi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis animi rem tempore veritatis sunt vel illo in! Minus repudiandae maxime amet modi quidem rerum, accusamus facilis, ullam nam temporibus asperiores?</p>
-      <button id="go-to-2">SIGUIENTE</button>
+      <button id="go-to-2" class="styled-buttons">SIGUIENTE</button>
     </article>
   `
   mainIntro.innerHTML = firstTemplate;

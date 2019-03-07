@@ -25,7 +25,6 @@ header div{
 
 #slogan{
     font-family: 'Cedarville Cursive', cursive;
-    font-weight: bold;
     margin-top: 0px;
 }
 
@@ -35,15 +34,19 @@ nav{
     justify-content: flex-end;
     justify-content: space-around;
     align-items: center;
+    margin: 20px 0px;
 }
 
 #steps{
     width: 100%;
     text-align: center;
+    background-color: rgb(255, 255, 255);
+    padding-bottom: 20px;
 }
 
 nav button{
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255, 0.5);
+    border-radius: 25%;
     border: none;
     color: rgb(0, 0, 0);
     cursor: pointer;
@@ -56,6 +59,11 @@ nav button{
     width: 15%;
     margin: 10px, 50px;
     font-size: 20px;
+    height: 100%;
+}
+
+#buying{
+    background-color: azure;
     height: 100%;
 }
 
@@ -94,7 +102,7 @@ button:hover{
     justify-content: center;
 }
 
-#go-to-2, #encoding, #decoding{
+.styled-buttons{
     background-color: rgb(255, 255, 255);
     border: solid;
     border-width: 1.5px;
@@ -126,9 +134,8 @@ button:hover{
     justify-content: space-around;
 }
 
-#written-text{
+#written-text, {
     margin: 10px 0px;
-
 }
 
 #indicator{
@@ -147,4 +154,34 @@ button:hover{
     width: 150px;
     margin-left: 45%;
     margin-top: 80%;
+}
+
+#three{
+    display: flex;
+    justify-content: space-around;
+}
+
+#go-back, #go-to-fourth{
+    width: 140px;
+    margin-left: 45%;
+}
+
+#showing-message{
+    display: flex;
+    justify-content: space-around;
+}
+
+#sharing{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#againCoding, #againDecoding{
+    width: 170px;
+    font-size: 13px;
+}
+
+#share{
+    font-family: 'Sigmar One', cursive;
 }
