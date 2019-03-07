@@ -3,9 +3,11 @@ const buyingSection = document.getElementById("buying");
 
 document.getElementById("to-buy").addEventListener("click", () => {
   buyingSection.style.display = "block";
+  goTo1();
 });
 
 const section = document.getElementById("buying-screens");
+
 const cleanSection = () => {
   section.style.display = "block";
   section.innerHTML = "";
@@ -144,7 +146,7 @@ const goTo5 = () => {
 }
 
 
-document.getElementById("first").addEventListener("click", () => {
+const goTo1 = () => {
   const mainIntro = document.createElement("MAIN");
   mainIntro.id = "one"
 
@@ -169,7 +171,9 @@ document.getElementById("first").addEventListener("click", () => {
   section.appendChild(mainIntro);
 
   document.getElementById("go-to-2").addEventListener("click", goTo2);
-});
+};
+
+document.getElementById("first").addEventListener("click", goTo1);
 
 document.getElementById("second").addEventListener("click", goTo2);
 
