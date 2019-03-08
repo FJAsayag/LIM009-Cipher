@@ -64,7 +64,7 @@ window.cipher = {
   for (let i = 0; i < str.length; i++) {
       
       asciiCode = str.charCodeAt(i);
-      let letter = "";
+      let letter = " ";
 
       if (asciiCode>= 65 && asciiCode<=90) {
         letter = window.cipher.toText(window.cipher.asciiCodeMathOperationForDecode(num, 26, asciiCode, 65));
