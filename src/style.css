@@ -8,6 +8,7 @@ header{
 
 header img{
     justify-content: flex-start;
+    width: 90px;
 }
 
 header div{
