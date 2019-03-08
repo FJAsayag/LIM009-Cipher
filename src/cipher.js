@@ -1,11 +1,20 @@
 window.cipher = {
   toText: (code) => String.fromCharCode(code),
 
-  asciiCodeMathOperation: (addition, numBlock, asciiCode, limitNum) => {
+  asciiCodeMathOperationForEncode: (addition, numBlock, asciiCode, limitNum) => {
     addition %= numBlock;
     asciiCode += addition;
-    if (asciiCode>maxNum) {
+    if (asciiCode>limitNum) {
       asciiCode -= numBlock;      
+    }
+    return asciiCode;
+  },
+
+  asciiCodeMathOperationForDecode: (addition, numBlock, asciiCode, limitNum) => {
+    addition %= numBlock;
+    asciiCode -= addition;
+    if (asciiCode<limitNum) {
+      asciiCode += numBlock;      
     }
     return asciiCode;
   },
@@ -20,25 +29,25 @@ window.cipher = {
       let letter = " ";
 
       if (asciiCode>= 65 && asciiCode<=90) {
-       letter = window.cipher.toText(window.cipher.asciiCodeMathOperation(num, 26, asciiCode, 90));
+       letter = window.cipher.toText(window.cipher.asciiCodeMathOperationForEncode(num, 26, asciiCode, 90));
         
       } else if (asciiCode>=97 && asciiCode<=122){
-        letter = window.cipher.toText(window.cipher.asciiCodeMathOperation(num, 26, asciiCode, 122));
+        letter = window.cipher.toText(window.cipher.asciiCodeMathOperationForEncode(num, 26, asciiCode, 122));
 
       } else if (asciiCode>=33 && asciiCode<=47){
-        letter = window.cipher.toText(window.cipher.asciiCodeMathOperation(num, 15, asciiCode, 47));
+        letter = window.cipher.toText(window.cipher.asciiCodeMathOperationForEncode(num, 15, asciiCode, 47));
 
       } else if (asciiCode>=48 && asciiCode<=57){
-        letter = window.cipher.toText(window.cipher.asciiCodeMathOperation(num, 10, asciiCode, 57));
+        letter = window.cipher.toText(window.cipher.asciiCodeMathOperationForEncode(num, 10, asciiCode, 57));
 
       } else if (asciiCode>=58 && asciiCode<=64){
-        letter = window.cipher.toText(window.cipher.asciiCodeMathOperation(num, 7, asciiCode, 64));
+        letter = window.cipher.toText(window.cipher.asciiCodeMathOperationForEncode(num, 7, asciiCode, 64));
 
       } else if (asciiCode>=91 && asciiCode<=96){
-        letter = window.cipher.toText(window.cipher.asciiCodeMathOperation(num, 6, asciiCode, 96));
+        letter = window.cipher.toText(window.cipher.asciiCodeMathOperationForEncode(num, 6, asciiCode, 96));
 
       } else if (asciiCode>=123 && asciiCode<=254){
-        letter = window.cipher.toText(window.cipher.asciiCodeMathOperation(num, 132, asciiCode, 254));
+        letter = window.cipher.toText(window.cipher.asciiCodeMathOperationForEncode(num, 132, asciiCode, 254));
       }
 
     newStr += letter;
@@ -50,94 +59,38 @@ window.cipher = {
 
   decode: (num, str) => {
     let asciiCode = 0;
-    let newStr = "";
+    let newStr = " ";
 
   for (let i = 0; i < str.length; i++) {
       
       asciiCode = str.charCodeAt(i);
-      let letter = " ";
+      let letter = "";
 
       if (asciiCode>= 65 && asciiCode<=90) {
-        letter = window.cipher.toText(window.cipher.asciiCodeMathOperation(num, 26, asciiCode, 90));
-
-        const numForLetters = num %= 26;
-        asciiCode -= numForLetters;
-      
-        if(asciiCode<65){
-            asciiCode += 26;
-        }
-      
-        toText();
+        letter = window.cipher.toText(window.cipher.asciiCodeMathOperationForDecode(num, 26, asciiCode, 65));
         
       } else if (asciiCode>=97 && asciiCode<=122){
-        const numForLetters = num %= 26;
-        asciiCode -= numForLetters;
-      
-        if(asciiCode<97){
-            asciiCode += 26;
-        }
-      
-        toText();
+        letter = window.cipher.toText(window.cipher.asciiCodeMathOperationForDecode(num, 26, asciiCode, 97));
 
       } else if (asciiCode>=33 && asciiCode<=47){
-        const numForOthers =  num %= 15;
-        asciiCode -= numForOthers;
-
-        if(asciiCode<33){
-            asciiCode += 15;
-        }
-
-        toText();
+        letter = window.cipher.toText(window.cipher.asciiCodeMathOperationForDecode(num, 15, asciiCode, 33));
 
       } else if (asciiCode>=48 && asciiCode<=57){
-        const numForOthers = num %= 10;
-        asciiCode -= numForOthers;
-
-        if(asciiCode<48){
-            asciiCode += 10;
-        }
-
-        toText();
+        letter = window.cipher.toText(window.cipher.asciiCodeMathOperationForDecode(num, 10, asciiCode, 48));
 
       } else if (asciiCode>=58 && asciiCode<=64){
-        const numForOthers =  num %= 7;
-        asciiCode -= numForOthers;
-
-        if(asciiCode<58){
-            asciiCode += 7;
-        }
-
-        toText();
+        letter = window.cipher.toText(window.cipher.asciiCodeMathOperationForDecode(num, 7, asciiCode, 58));
 
       } else if (asciiCode>=91 && asciiCode<=96){
-        const numForOthers =  num %= 6;
-        asciiCode -= numForOthers;
-
-        if(asciiCode<91){
-            asciiCode += 6;
-        }
-
-        toText();
+        letter = window.cipher.toText(window.cipher.asciiCodeMathOperationForDecode(num, 6, asciiCode, 91));
 
       } else if (asciiCode>=123 && asciiCode<=254){
-        const numForOthers = num %= 132;
-        asciiCode -= numForOthers;
+        letter = window.cipher.toText(window.cipher.asciiCodeMathOperationForDecode(num, 132, asciiCode, 123));
 
-        if(asciiCode<123){
-            asciiCode += 132;
-        }
+      }
 
-        toText();
-       
-      } else {
-        asciiCode;
-      
-        toText();
-      }    
-
-    newStr += asciiCode;
+    newStr += letter;
     }
-
    return newStr;
   }
 }
