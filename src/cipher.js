@@ -59,7 +59,7 @@ window.cipher = {
 
   decode: (num, str) => {
     let asciiCode = 0;
-    let newStr = " ";
+    let newStr = "";
 
   for (let i = 0; i < str.length; i++) {
       
