@@ -158,7 +158,7 @@ const goTo1 = () => {
       <h1 class="not-so-bad">No es tan mala como la creen.</h1>
     </div>
     <article id="firstArt">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quisquam placeat error saepe quod cumque voluptates cum excepturi ad praesentium recusandae, quibusdam reiciendis, est sint autem nulla fugit quasi. Corporis.</p>
+      <p></p>
       <p>Masdas consectetur adipisicing elit. Fuga perspiciatis autem facere aliquid distinctio praesentium ad dolorum facilis! Officia alias fugiat voluptatibus mollitia incidunt doloribus placeat vitae tempora reiciendis laudantium!</p>
       <h3>Something to explain lor sit amet</h3>
       <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium, doloribus veniam, deleniti, sint vitae libero minima quo voluptatem repudiandae nesciunt incidunt quaerat cum exercitationem ipsam accusantium. Similique</p>
