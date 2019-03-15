@@ -21,7 +21,7 @@ const goTo2 = () => {
   const secondTemplate = `
   <article id="secondArt">
     <h2>Haz tu pedido</h2>
-    <p>Lorem ipsum dolor Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur ullam eius natus nemo, minus error vel quisquam cupiditate magni atque magnam! Sit officia rerum nesciunt sunt ipsa vel, quibusdam illum? sit amet consectetur adipisicing elit. Reprehenderit consequatur, id nihil impedit tenetur perspiciatis unde placeat aliquid quam fugiat animi nemo iste expedita eos qui. Porro!</p>
+    <p>Para poder hacer esta interacción lo más rápida pero clara posible, se le pide que en el cuadro de texto se introduzca la siguiente información: correo electrónico, nombre completo, número de teléfono celular, producto a comprar, detalles del producto (cantidad y especificaciones con respecto al THC y CBD), razones del consumo del producto, y lo adicional que desee añadir.</p>
   </article>
   <div id="coder">
    <div>
@@ -158,11 +158,12 @@ const goTo1 = () => {
       <h1 class="not-so-bad">No es tan mala como la creen.</h1>
     </div>
     <article id="firstArt">
-      <p></p>
-      <p>Masdas consectetur adipisicing elit. Fuga perspiciatis autem facere aliquid distinctio praesentium ad dolorum facilis! Officia alias fugiat voluptatibus mollitia incidunt doloribus placeat vitae tempora reiciendis laudantium!</p>
-      <h3>Something to explain lor sit amet</h3>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium, doloribus veniam, deleniti, sint vitae libero minima quo voluptatem repudiandae nesciunt incidunt quaerat cum exercitationem ipsam accusantium. Similique</p>
-      <p>Wnsectetur adipisicing elit. Magni, iste. Omnis repellendus ad aliquam expedita blanditiis sunt eos dolorum maxime. Alias nobis, possimus provident dignissimos aspernatur reiciendis iste voluptatem excepturi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis animi rem tempore veritatis sunt vel illo in! Minus repudiandae maxime amet modi quidem rerum, accusamus facilis, ullam nam temporibus asperiores?</p>
+      <p class="a-font">La marihuana ha sido muy mal mirada desde que abrimos los ojos y vimos la luz de este mundo, pero ¿es realmente lo que vemos la luz? Hay, tal vez, un mundo entero que nos perdemos por no mirar con otros ojos a lo que la sociedad sentencia como delito.</p>
+      <p class="a-font">María merece ser mirada por mucho más público con ojos de amor: ojos de aquellos que la conocieron y vieron, vivenciaron o conocieron sus poderes en la salud.  Es por ello que esta web existe: alimentamos el brillo en los ojos de quienes ya confían en ella y esperamos contagiar vibras similares.</p>
+      <h3>Instrucciones de compra.</h3>
+      <p>Esperamos que para este momento ya haya conocido el catálogo de productos a base de esta maravillosa plantita y esté feliz de poder adquirir lo que desea. Sin embargo, a pesar que compartimos esa felicidad con usted, debemos seguir unos pasos antes para la correcta adquisición del producto.</p>
+      <p>Este camino consta básicamente de un tipo específico y especial de comunicación: por medio de la codificación de mensaje, con la ayuda del cifrado cesar. Básicamente, tendrá que escribir su pedido en un cuadro de texto, ponerle una cifra random que servirá como ‘clave’ para su mensaje y enviarnos el mensaje codificado. De igual manera, recibirá en su correo (antes solicitado) la respuesta a su pedido de manera codificada y tendrá la opción a descifrarlo, con la ‘clave’ que se le indique.</p>
+      <p>Nota: Debemos aclarar que la forma en la que procedemos es guiada fundamentalmente por la comunicación que tengamos con usted, y es totalmente relevante para cerrar la compra por términos legales y políticos.</p>
       <button id="go-to-2" class="styled-buttons">SIGUIENTE</button>
     </article>
   `

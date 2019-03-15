@@ -1,3 +1,7 @@
+body{
+    background-color: azure;
+}
+
 header{
     position: sticky;
     background-color: azure;
@@ -42,7 +46,7 @@ nav{
     width: 100%;
     text-align: center;
     background-color: rgb(255, 255, 255);
-    padding-bottom: 20px;
+    padding: 20px 0px
 }
 
 nav button{
@@ -60,11 +64,6 @@ nav button{
     width: 15%;
     margin: 10px, 50px;
     font-size: 20px;
-    height: 100%;
-}
-
-#buying{
-    background-color: azure;
     height: 100%;
 }
 
@@ -98,9 +97,15 @@ button:hover{
     display: flex;
     flex-direction: column;
     text-align: justify;
-    margin: 0 5%;
-    margin-bottom: 10%;
+    margin: 0 7%;
+    margin-bottom: 3%;
+    margin-top: 25px;
     justify-content: center;
+    font-family: 'Sniglet', cursive;
+}
+
+.a-font{
+    font-family: 'Happy Monkey', cursive;
 }
 
 .styled-buttons{
@@ -123,6 +128,8 @@ button:hover{
     display: flex;
     flex-direction: column;
     margin: 0 10%;
+    font-family: 'Sniglet', cursive;
+    font-size: 120%;
 }
 
 
@@ -155,11 +162,13 @@ button:hover{
     width: 150px;
     margin-left: 45%;
     margin-top: 80%;
+    font-size: 120%;
 }
 
 #three{
     display: flex;
     justify-content: space-around;
+    font-size: 150%;
 }
 
 #go-back, #go-to-fourth{
